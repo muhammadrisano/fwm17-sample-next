@@ -1,5 +1,6 @@
 const urlApi = 'http://localhost:4000'
 import {cookies} from 'next/headers';
+import { headers } from 'next/headers';
 const getCookie = async (name) => {
   return cookies().get(name)?.value ?? '';
 }
