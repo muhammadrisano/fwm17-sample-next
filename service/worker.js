@@ -1,12 +1,19 @@
 const urlApi = 'http://localhost:4000'
-
+import {cookies} from 'next/headers';
+const getCookie = async (name) => {
+  return cookies().get(name)?.value ?? '';
+}
 
 export const getDataWorkers = async()=>{
-  const response = await fetch(`${urlApi}/v1/workers`, {
+  const token = await getCookie('token');
+  console.log(token);
+  const response = await fetch(`https://fwm17-be-peword.vercel.app/v1/workers`, {
     headers:{
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      ...(token ? {"Cookie": `token=${token};path=/;expires=Session`}: {})
     },
-    cache: 'no-store'
+    credentials: 'include',
+    // cache: 'no-store'
     //  next: { revalidate: 60 }
   })
 
