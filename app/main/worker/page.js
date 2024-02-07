@@ -1,4 +1,4 @@
-import { getDataWorkers } from "@/service/worker";
+// import { getDataWorkers } from "@/service/worker";
 // import React, { Suspense, useEffect, useState } from "react";
 // import useSWR from "swr";
 // import PostSection from "@/components/template/post";
@@ -13,6 +13,8 @@ import { getDataWorkers } from "@/service/worker";
 //    return res.json();
 // })
 
+import {getWorkers} from '@/service/worker'
+
 
 
 const WorkerPage = async() => {
@@ -21,7 +23,7 @@ const WorkerPage = async() => {
   //   "https://fwm17-be-peword.vercel.app/v1/workersx",
   //   fetcher
   // );
-  const workerData = await getDataWorkers()
+  // const workerData = await getDataWorkers()
   // const postData = getPost()
 
   // const getData =async()=>{
@@ -43,12 +45,16 @@ const WorkerPage = async() => {
   // },[])
   // const [posts, worker] = await Promise.all([postData, workerData])
 
+  const workerData = await getWorkers()
+
+
   return (
     <div>
      
         <div className="flex gap-4 flex-wrap">
           {/* <p>{JSON.stringify(workerData)}</p> */}
-          {workerData?.data?.map((item) => (
+          {
+          workerData?.data?.map((item) => (
             <div className="w-44 h-60 rounded-md border shadow-md" key={item.id}>
               <h2 className="text-lg font-bold text-center">{item.name}</h2>
               <p>Job: {item.job_desk || '-'}</p>
