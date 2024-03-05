@@ -45,7 +45,7 @@ const WorkerPage = async() => {
   // },[])
   // const [posts, worker] = await Promise.all([postData, workerData])
 
-  const workerData = await getWorkers()
+  // const workerData = await getWorkers()
 
 
   return (
@@ -53,14 +53,14 @@ const WorkerPage = async() => {
      
         <div className="flex gap-4 flex-wrap">
           {/* <p>{JSON.stringify(workerData)}</p> */}
-          {
+          {/* {
           workerData?.data?.map((item) => (
             <div className="w-44 h-60 rounded-md border shadow-md" key={item.id}>
               <h2 className="text-lg font-bold text-center">{item.name}</h2>
               <p>Job: {item.job_desk || '-'}</p>
               <p>Domisili: {item.domicile || '-'} </p>
             </div>
-          ))}
+          ))} */}
         </div>
         <hr />
         {/* <Suspense fallback={<h1>loading data post....</h1>}>
