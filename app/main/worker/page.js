@@ -52,7 +52,8 @@ const WorkerPage = async() => {
     <div>
      
         <div className="flex gap-4 flex-wrap">
-          {/* <p>{JSON.stringify(workerData)}</p> */}
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed quas, ducimus reiciendis itaque perferendis unde maxime inventore nostrum. Ipsam eveniet error quia consequuntur rerum ea delectus velit odio commodi eaque? Distinctio officia assumenda accusantium quaerat recusandae, laudantium tenetur odit quae animi, et maiores eos corrupti ipsam quisquam vero ipsa delectus temporibus doloribus natus. Nulla laboriosam perferendis ad corporis. Sequi in quo dolores voluptate sapiente voluptatum iusto mollitia delectus repellat exercitationem rerum veniam ex eligendi velit, quam, excepturi fuga nisi ullam! Excepturi at, enim sint quibusdam iste quae debitis deleniti provident voluptatum amet! Consequatur reiciendis quis porro dicta impedit minima dolor.</p>
+          <p>{JSON.stringify(workerData)}</p>
           {
           workerData?.data?.map((item) => (
             <div className="w-44 h-60 rounded-md border shadow-md" key={item.id}>
